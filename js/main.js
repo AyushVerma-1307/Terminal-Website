@@ -35,53 +35,155 @@ console.log(
     "color: grey"
 );
 
+//init
+textarea.value = "";
+command.innerHTML = textarea.value;
+
 function enterKey(e) {
-    if (e.keyCode == 181) { // Audio mute key
-      document.location.reload(true); // the page will be reloaded with a hard reload
+    if (e.keyCode == 181) {
+        // Audio mute key
+        document.location.reload(true); // the page will be reloaded with a hard reload
     }
     if (pw) {
-      let et = "*"; // often used to mask passwords by replacing each character with an asterisk
-      let w = textarea.value.length;
-      command.innerHTML = et.repeat(w);
-      if (textarea.value === password) {
-        pwd = true;
-      }
-      if (pwd && e.keyCode == 13) { // 13: Enter key
-        loopLines(secret, "color2 margin", 120);
-        command.innerHTML = "";
-        textarea.value = "";
-        pwd = false;
-        pw = false;
-        liner.classList.remove("password");
-      } else if (e.keyCode == 13) {
-        addLine("Wrong password", "error", 0);
-        command.innerHTML = "";
-        textarea.value = "";
-        pw = false;
-        liner.classList.remove("password");
-      }
-    } else {
-      if (e.keyCode == 13) {
-        commands.push(command.innerHTML);
-        git = commands.length;
-        addLine("guest@ayushterminal.web.app:~$ " + command.innerHTML, "no-animation", 0);
-        commander(command.innerHTML.toLowerCase());
-        command.innerHTML = "";
-        textarea.value = "";
-      }
-      if (e.keyCode == 38 && git != 0) { // 38: Arrow Up Key
-        git -= 1;
-        textarea.value = commands[git];
-        command.innerHTML = textarea.value;
-      }
-      if (e.keyCode == 40 && git != commands.length) { // 40: Arrow Down Key
-        git += 1;
-        if (commands[git] === undefined) {
-          textarea.value = "";
-        } else {
-          textarea.value = commands[git];
+        let et = "*"; // often used to mask passwords by replacing each character with an asterisk
+        let w = textarea.value.length;
+        command.innerHTML = et.repeat(w);
+        if (textarea.value === password) {
+            pwd = true;
         }
-        command.innerHTML = textarea.value;
-      }
+        if (pwd && e.keyCode == 13) {
+            // 13: Enter key
+            loopLines(secret, "color2 margin", 120);
+            command.innerHTML = "";
+            textarea.value = "";
+            pwd = false;
+            pw = false;
+            liner.classList.remove("password");
+        } else if (e.keyCode == 13) {
+            addLine("Wrong password", "error", 0);
+            command.innerHTML = "";
+            textarea.value = "";
+            pw = false;
+            liner.classList.remove("password");
+        }
+    } else {
+        if (e.keyCode == 13) {
+            commands.push(command.innerHTML);
+            git = commands.length;
+            addLine(
+                "guest@ayushterminal.web.app:~$ " + command.innerHTML,
+                "no-animation",
+                0
+            );
+            commander(command.innerHTML.toLowerCase());
+            command.innerHTML = "";
+            textarea.value = "";
+        }
+        if (e.keyCode == 38 && git != 0) {
+            // 38: Arrow Up Key
+            git -= 1;
+            textarea.value = commands[git];
+            command.innerHTML = textarea.value;
+        }
+        if (e.keyCode == 40 && git != commands.length) {
+            // 40: Arrow Down Key
+            git += 1;
+            if (commands[git] === undefined) {
+                textarea.value = "";
+            } else {
+                textarea.value = commands[git];
+            }
+            command.innerHTML = textarea.value;
+        }
     }
-  }
+}
+
+function commander(cmd) {
+    switch (cmd.toLowerCase()) {
+        case "help":
+            loopLines(help, "color2 margin", 80);
+            break;
+        case "whois":
+            loopLines(whois, "color2 margin", 80);
+            break;
+        case "ayush":
+            loopLines(ayush, "color2 margin", 80);
+            break;
+        case "sudo":
+            addLine("Oh no, you're not admin...", "color2", 80);
+            setTimeout(function () {
+                window.open("https://www.youtube.com/shorts/V6Qipms13VE");
+            }, 1000);
+            break;
+        case "rm -rf":
+            addLine(
+                "HaHa, you really think you're going to make it, don't you?!",
+                "color2",
+                80
+            );
+            setTimeout(function () {
+                window.open("https://trollface.dk/");
+            }, 1000);
+            break;
+        case "social":
+            loopLines(social, "color2 margin", 80);
+            break;
+        case "codevoke":
+            liner.classList.add("password");
+            pw = true;
+            break;
+        case "projects":
+            loopLines(projects, "color2 margin", 80);
+            break;
+        case "password":
+            addLine(
+                '<span class="inherit"> Ha ha ha! Nice try, my friend, but I\'m not easily fooled! </span>',
+                "error",
+                100
+            );
+            addLine(
+                '<span class="inherit"> You\'ll need to put on your best trickster hat if you want to pull one over on me! 😜 </span>',
+                "error",
+                100
+            );
+            break;
+        case "history":
+            addLine("<br>", "", 0);
+            loopLines(commands, "color2", 80);
+            addLine("<br>", "command", 80 * commands.length + 50);
+            break;
+        case "email":
+            addLine(
+                'Opening mailto:<a href="mailto:ayushsoni2323@gmail.com">ayushsoni2323@gmail.com</a>...',
+                "color2",
+                80
+            );
+            newTab(email);
+            break;
+        case "clear":
+            setTimeout(function () {
+                terminal.innerHTML = '<a id="before"></a>';
+                before = document.getElementById("before");
+            }, 1);
+            break;
+        case "banner":
+            loopLines(banner, "", 80);
+            break;
+        // socials
+        case "linkedin":
+            addLine("Opening LinkedIn...", "color2", 80);
+            newTab(linkedin);
+            break;
+        case "github":
+            addLine("Opening GitHub...", "color2", 0);
+            newTab(github);
+            break;
+        default:
+            addLine(
+                '<span class="inherit">Command not found. For a list of commands, type <span class="command">\'help\'</span>.</span>',
+                "error",
+                100
+            );
+            break;
+    }
+}
