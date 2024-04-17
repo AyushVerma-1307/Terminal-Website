@@ -35,6 +35,53 @@ console.log(
     "color: grey"
 );
 
-//init
-textarea.value = "";
-command.innerHTML = textarea.value;
+function enterKey(e) {
+    if (e.keyCode == 181) { // Audio mute key
+      document.location.reload(true); // the page will be reloaded with a hard reload
+    }
+    if (pw) {
+      let et = "*"; // often used to mask passwords by replacing each character with an asterisk
+      let w = textarea.value.length;
+      command.innerHTML = et.repeat(w);
+      if (textarea.value === password) {
+        pwd = true;
+      }
+      if (pwd && e.keyCode == 13) { // 13: Enter key
+        loopLines(secret, "color2 margin", 120);
+        command.innerHTML = "";
+        textarea.value = "";
+        pwd = false;
+        pw = false;
+        liner.classList.remove("password");
+      } else if (e.keyCode == 13) {
+        addLine("Wrong password", "error", 0);
+        command.innerHTML = "";
+        textarea.value = "";
+        pw = false;
+        liner.classList.remove("password");
+      }
+    } else {
+      if (e.keyCode == 13) {
+        commands.push(command.innerHTML);
+        git = commands.length;
+        addLine("guest@ayushterminal.web.app:~$ " + command.innerHTML, "no-animation", 0);
+        commander(command.innerHTML.toLowerCase());
+        command.innerHTML = "";
+        textarea.value = "";
+      }
+      if (e.keyCode == 38 && git != 0) { // 38: Arrow Up Key
+        git -= 1;
+        textarea.value = commands[git];
+        command.innerHTML = textarea.value;
+      }
+      if (e.keyCode == 40 && git != commands.length) { // 40: Arrow Down Key
+        git += 1;
+        if (commands[git] === undefined) {
+          textarea.value = "";
+        } else {
+          textarea.value = commands[git];
+        }
+        command.innerHTML = textarea.value;
+      }
+    }
+  }
