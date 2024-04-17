@@ -217,3 +217,9 @@ function addLine(text, style, time) {
         window.scrollTo(0, document.body.offsetHeight);
     }, time);
 }
+
+function loopLines(name, style, time) {
+    name.forEach(function (item, index) {
+        addLine(item, style, index * time);
+    });
+}
