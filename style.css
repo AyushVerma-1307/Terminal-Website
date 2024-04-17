@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    padding: 15px 20px;
+    min-height: 99%;
+    width: 100%;
+    min-width: 550px;
+    color: #519975;
+    background: #211d1b;
+    font-family: cursor, monospace;
+    overflow-x: hidden; /* specifies how to handle the overflow of content along the horizontal (X) axis of an element's content box*/
+}
