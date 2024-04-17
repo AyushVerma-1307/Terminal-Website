@@ -22,4 +22,7 @@ function typeIt(from, e) { // used to update the content of an HTML element, bas
     if (!pw){
       w.innerHTML = nl2br(tw);
     }
+    else{
+      w.innerHTML = nl2br(pw);
+    }
   }
