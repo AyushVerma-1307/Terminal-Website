@@ -34,3 +34,7 @@ console.log(
         "' - I wonder what it does?🤔",
     "color: grey"
 );
+
+//init
+textarea.value = "";
+command.innerHTML = textarea.value;
