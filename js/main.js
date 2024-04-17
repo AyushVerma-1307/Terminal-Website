@@ -187,3 +187,33 @@ function commander(cmd) {
             break;
     }
 }
+
+function newTab(link) {
+    setTimeout(function () {
+        window.open(link, "_blank");
+    }, 500);
+}
+
+function addLine(text, style, time) {
+    var t = "";
+    for (let i = 0; i < text.length; i++) {
+        if (text.charAt(i) == " " && text.charAt(i + 1) == " ") {
+            // If the current character and the next character are both spaces,
+            // &nbsp;&nbsp; is added to the t string to replace the two spaces.
+            t += "&nbsp;&nbsp;";
+            i++;
+        } else {
+            t += text.charAt(i);
+        }
+    }
+    setTimeout(function () {
+        var next = document.createElement("p");
+        next.innerHTML = t;
+        next.className = style;
+        // used to insert the new next element before the before element
+        before.parentNode.insertBefore(next, before);
+        // The window.scrollTo() method is called with two arguments: 0 as the first argument to scroll to the top of the page,
+        // and document.body.offsetHeight as the second argument to ensure that the new element is visible
+        window.scrollTo(0, document.body.offsetHeight);
+    }, time);
+}
