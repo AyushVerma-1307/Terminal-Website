@@ -33,3 +33,23 @@ help = [
     "| codevoke   | Unveil the obscurity that lies within me.                                 |",
     "+========================================================================================+",
 ];
+
+whois = [
+    "<br>",
+    'Welcome to my Terminal Website! I\'m <span class="command">Ayush</span>!😎',
+    "<br>",
+    '- I\'m currently pursuing my B.Tech from IMS Engineering College, hailing from <span class="command">Rae Bareli</span>, <span class="command">Uttar Pradesh</span>, <span class="command">India</span>.',
+    "<br>",
+    '- Being a computer science student, I\'m <span class="command">driven</span> and <span class="command">disciplined</span>, aiming for a career in <span class="command">full-stack development</span>.',
+    "<br>",
+    '- Combining <span class="command">self-study</span> with collaboration, I continually refine my skills to become a proficient <span class="command">full-stack developer</span>.',
+    "<br>",
+    '- I <span class="command">embrace challenges</span>, pushing beyond my comfort zone to seize new opportunities.',
+    "<br>",
+    '- Programming appeals to me for its capacity to streamline tasks and enhance <span class="command">efficiency</span>.',
+    "<br>",
+    "- Additionally, it fosters collaboration across diverse fields of interest.",
+    "<br>",
+    '- Collaborating with professionals who share common goals is immensely <span class="command">rewarding</span>.',
+    "<br>",
+];
