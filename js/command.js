@@ -123,3 +123,17 @@ banner = [
     "██║  ██║   ██║   ╚██████╔╝███████║██║  ██║     ╚████╔╝ ███████╗██║  ██║██║ ╚═╝ ██║██║  ██║",
     "╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚══════╝╚═╝  ╚═╝      ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝",
 ];
+
+suggestion = [
+    "<p class>",
+    '<span class="color2">Welcome to my terminal website! This website was inspired by <a target="_blank" href="https://www.youtube.com/watch?v=KtYby2QN0kQ&list=RDCMUC2WHjPDvbE6O328n17ZGcfg&start_radio=1&rv=KtYby2QN0kQ&t=15&ab_channel=ForrestKnight">ForrestKnight~</a><br>For a list of available commands, type <span class="command">help</span> .',
+    "</span>",
+    "</p>",
+];
+
+secret = [
+    "<br>",
+    '<span class="command">sudo</span>       Only admin can type this command',
+    '<span class="command">rm -rf</span>     This will remove all files and directories of this website',
+    "<br>",
+];
