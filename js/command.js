@@ -29,7 +29,7 @@ help = [
     "| clear      | Clear terminal                                                            |",
     "| banner     | Display the header                                                        |",
     "| linkedin   | Checkout my LinkedIn profile for the latest updates!                      |",
-    "| gitHub     | Discover more projects on my GitHub profile                               |",
+    "| github     | Discover more projects on my GitHub profile                               |",
     "| codevoke   | Unveil the obscurity that lies within me.                                 |",
     "+========================================================================================+",
 ];
