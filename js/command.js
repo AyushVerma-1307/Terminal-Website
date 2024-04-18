@@ -53,3 +53,51 @@ whois = [
     '- Collaborating with professionals who share common goals is immensely <span class="command">rewarding</span>.',
     "<br>",
 ];
+
+ayush = [
+    "<br>",
+    'For a comprehensive overview of my qualifications and expertise, I kindly direct you to my <a href="' +
+        Portfolio +
+        '" target="_blank">portfolio website.' +
+        "</a>",
+    "<br>",
+];
+
+projects = [
+    "<br>",
+    '<span class="command">Code Projects</span>',
+    '<a href="' + Portfolio + '" target="_blank">My Portfolio' + "</a>",
+    '<p class="terminal">Terminal Website (The one you\'re using right now!)</p>',
+    '<a href="' +
+        StudyNotion +
+        '" target="_blank">Education Tech Web App' +
+        "</a>",
+    '<a href="' +
+        YouTwit_Backend +
+        '" target="_blank">Youtube Twitter Backend' +
+        "</a>",
+    '<a href="' + DevFinder + '" target="_blank">Github User Finder' + "</a>",
+    '<a href="' + Weather_App + '" target="_blank">Weather App' + "</a>",
+    '<a href="' + TIC_TAC_TOE + '" target="_blank">Tic Tac toe' + "</a>",
+    '<a href="' + TODO_APP + '" target="_blank">Todo Web App' + "</a>",
+    '<a href="' + KeyCraft + '" target="_blank">Password Generator' + "</a>",
+    "<br>",
+    '<span class="command">Mini games</span>',
+    '<a href="' +
+        Virtual_Mouse +
+        '" target="_blank">Vitual mouse controller' +
+        "</a>",
+    '<a href="' +
+        Python_ChatBot +
+        '" target="_blank">CLI chatbot using ChatGPT' +
+        "</a>",
+    '<a href="' +
+        TwinPortal +
+        '" target="_blank">Login and Signup portal using tkinter ' +
+        "</a>",
+    '<a href="' +
+        Roll_the_Dice +
+        '" target="_blank">Mini Project for rolling the dice' +
+        "</a>",
+    "<br>",
+];
